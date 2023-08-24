@@ -18,10 +18,12 @@ const [x, y] = fs
 
 const checkValue = y - 45;
 
-if (checkValue > 0) {
+if (checkValue >= 0) {
   console.log(`${x} ${checkValue}`);
 } else {
   const hour = x === 0 ? 23 : x - 1;
 
-  console.log(`${hour} ${60 - Math.abs(checkValue)}`);
+  const minute = 60 - Math.abs(checkValue);
+
+  console.log(`${hour} ${minute === 60 ? 0 : minute}`);
 }
